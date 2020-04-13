@@ -106,4 +106,23 @@ public class ${table.entityName}Controller {
         return RestResult.build("删除" + ids.size() + "条记录成功");
     }
 
+<#list table.columns as column>
+    <#if column.unique>
+    /**
+    * 判断${column.columnComment}是否唯一
+    *
+    * @param ${column.javaVarName} ${column.columnComment}
+    *
+    * @return true 是，否则 false
+    */
+    @GetMapping("is${column.javaName}Unique")
+    @PreAuthorize("isAuthenticated()")
+    @Plugin(name = "判断${column.columnComment}是否唯一", source = ResourceSource.All)
+    public boolean is${column.javaName}Unique(@RequestParam ${column.javaTypeName} ${column.javaVarName}) {
+        Map<String, Object> filter = new LinkedHashMap<>();
+        filter.put("${column.javaVarName}Eq", ${column.javaVarName});
+        return dictionaryService.findDataDictionaries(filter).size() > 0;
+    }
+    </#if>
+</#list>
 }

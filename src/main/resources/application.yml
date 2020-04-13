@@ -8,7 +8,7 @@ spring:
 
 
 jcode:
-  basePackage: com.github.dactiv.xiaoshamu.authentication
+  basePackage: com.github.dactiv.xiaoshamu.message
   genController: true
   genService: true
   genEntity: true
@@ -19,8 +19,4 @@ jcode:
     - id
     - creationTime
   tableNames:
-    - tb_member_user_initialization
-    - tb_member_user
     - tb_resource
-    - tb_group
-    - tb_console_user
