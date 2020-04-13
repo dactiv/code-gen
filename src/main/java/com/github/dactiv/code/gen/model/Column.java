@@ -65,6 +65,10 @@ public class Column {
      * 默认值
      */
     private String defaultValue;
+    /**
+     * 是否唯一索引
+     */
+    private boolean unique;
 
     public Column() {
     }
@@ -179,5 +183,13 @@ public class Column {
 
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public boolean isUnique() {
+        return unique;
+    }
+
+    public void setUnique(boolean unique) {
+        this.unique = unique;
     }
 }

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 /**
- * ${table.tableComment}访问
+ * ${table.tableComment}数据访问
  *
  * @author maurice
  *

@@ -45,8 +45,7 @@ public class TableHandler implements DisposableBean {
     }
 
     public Table getTableInfo(String tableName) {
-        Table table = getTable(tableName);
-        return table;
+        return getTable(tableName);
     }
 
 
@@ -115,8 +114,6 @@ public class TableHandler implements DisposableBean {
             e.printStackTrace();
         }
 
-
-
         return table;
     }
 
@@ -182,7 +179,17 @@ public class TableHandler implements DisposableBean {
             column.setNullable(rs.getBoolean("NULLABLE"));
             column.setDefaultValue(rs.getString("COLUMN_DEF"));
             column.setColumnComment(rs.getString("REMARKS"));
-            column.setAutoincrement(hasColumn(rs, "IS_AUTOINCREMENT") ? rs.getBoolean("IS_AUTOINCREMENT") : false);
+            column.setAutoincrement(hasColumn(rs, "IS_AUTOINCREMENT") && rs.getBoolean("IS_AUTOINCREMENT"));
+
+            try(PreparedStatement pc = connection.prepareStatement("show index from " + tableName + " WHERE non_unique = 0 AND key_name != 'PRIMARY' AND column_name = '" + columnName + "'")) {
+                try (ResultSet executeQuery = pc.executeQuery()) {
+                    if (executeQuery.next()) {
+                        if (!executeQuery.getBoolean("non_unique")) {
+                            column.setUnique(true);
+                        }
+                    }
+                }
+            }
             return column;
         } catch (Exception e) {
             e.printStackTrace();

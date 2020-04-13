@@ -29,7 +29,7 @@ public class ${table.entityName}Service {
     private ${table.entityName}Dao ${table.entityVarName}Dao;
 
     /**
-     * 保存${table.tableComment}
+     * 保存${table.tableComment}实体
      *
      * @param ${table.entityVarName} ${table.tableComment}实体
      */
@@ -42,7 +42,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 更新${table.tableComment}
+     * 新增${table.tableComment}实体
      *
      * @param ${table.entityVarName} ${table.tableComment}实体
      */
@@ -51,7 +51,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 更新${table.tableComment}
+     * 更新${table.tableComment}实体
      *
      * @param ${table.entityVarName} ${table.tableComment}实体
      */
@@ -60,7 +60,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 删除${table.tableComment}
+     * 删除${table.tableComment}实体
      *
      * @param id 主键 id
      */
@@ -69,7 +69,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 删除${table.tableComment}
+     * 删除${table.tableComment}实体
      *
      * @param ids 主键 id 集合
      */
@@ -80,7 +80,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 获取${table.tableComment}
+     * 获取${table.tableComment}实体
      *
      * @param id 主键 id
      * @return ${table.tableComment}实体
@@ -90,11 +90,11 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 获取${table.tableComment}
+     * 获取${table.tableComment}实体
      *
      * @param filter 过滤条件
      *
-     * @return ${table.tableComment}
+     * @return ${table.tableComment}实体
      */
     public ${table.entityName} get${table.entityName}ByFilter(Map<String, Object> filter) {
 
@@ -109,7 +109,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 根据过滤条件查找${table.tableComment}数据
+     * 根据过滤条件查找${table.tableComment}实体
      *
      * @param filter 过滤条件
      * @return ${table.tableComment}实体集合
@@ -119,7 +119,7 @@ public class ${table.entityName}Service {
     }
 
     /**
-     * 查找${table.tableComment}分页数据
+     * 查找${table.tableComment}实体分页数据
      *
      * @param pageRequest 分页请求
      * @param filter 过滤条件

@@ -35,6 +35,16 @@
             id = ${r'#{id}'}
     </select>
 
+    <select id="lock" resultMap="baseResultMap" >
+        SELECT
+            <include refid="baseColumnList"/>
+        FROM
+            ${table.tableName}
+        WHERE
+            id = ${r'#{id}'}
+        FOR UPDATE
+    </select>
+
     <select id="find" resultMap="baseResultMap" parameterType="java.util.Map">
         SELECT
             <include refid="baseColumnList" />
@@ -72,13 +82,21 @@
         </#if>
         INSERT INTO ${table.tableName} (
         <#list table.columns as column>
+            <#if column.primaryKeyFlag && column.autoincrement>
+                <#continue />
+            </#if>
             ${column.columnName}<#if column_has_next>,</#if>
         </#list>
         ) VALUES (
         <#list table.columns as column>
+            <#if column.primaryKeyFlag && column.autoincrement>
+                <#continue />
+            </#if>
             ${r'#{'}${column.javaVarName}}<#if column_has_next>,</#if>
         </#list>
         )
     </insert>
+
+    <!-- 将代码添加到以下区域，以免生成后被覆盖 -->
 
 </mapper>
