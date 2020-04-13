@@ -31,9 +31,6 @@ public class ${table.entityName} extends IntegerIdEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	public ${table.entityName}() {
-	}
-
 <#list table.columns as column>
     <#if ignoreProperties?seq_contains(column.javaVarName) == false>
     /**
@@ -47,7 +44,13 @@ public class ${table.entityName} extends IntegerIdEntity {
 
     </#if>
 </#list>
-
+    /**
+     *
+     * ${table.tableComment}实体类
+     *
+     */
+    public ${table.entityName}() {
+    }
 <#list table.columns as column>
     <#if ignoreProperties?seq_contains(column.javaVarName) == false>
 

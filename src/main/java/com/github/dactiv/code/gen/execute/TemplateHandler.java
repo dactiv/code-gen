@@ -1,7 +1,7 @@
-package com.easy.jcode.execute;
+package com.github.dactiv.code.gen.execute;
 
-import com.easy.jcode.JavaCodeProperties;
-import com.easy.jcode.model.Table;
+import com.github.dactiv.code.gen.JavaCodeProperties;
+import com.github.dactiv.code.gen.model.Table;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

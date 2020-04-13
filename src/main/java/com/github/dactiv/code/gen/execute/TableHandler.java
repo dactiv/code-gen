@@ -1,10 +1,10 @@
-package com.easy.jcode.execute;
+package com.github.dactiv.code.gen.execute;
 
-import com.easy.jcode.JavaCodeProperties;
-import com.easy.jcode.model.Column;
-import com.easy.jcode.model.JavaType;
-import com.easy.jcode.model.Table;
-import com.easy.jcode.util.StringUtil;
+import com.github.dactiv.code.gen.JavaCodeProperties;
+import com.github.dactiv.code.gen.model.Column;
+import com.github.dactiv.code.gen.model.JavaType;
+import com.github.dactiv.code.gen.model.Table;
+import com.github.dactiv.code.gen.util.StringUtil;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;

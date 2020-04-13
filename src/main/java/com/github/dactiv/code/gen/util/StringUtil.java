@@ -1,4 +1,4 @@
-package com.easy.jcode.util;
+package com.github.dactiv.code.gen.util;
 
 
 import java.util.regex.Matcher;

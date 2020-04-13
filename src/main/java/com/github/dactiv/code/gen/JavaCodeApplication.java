@@ -1,4 +1,4 @@
-package com.easy.jcode;
+package com.github.dactiv.code.gen;
 
 
 import org.springframework.boot.SpringApplication;

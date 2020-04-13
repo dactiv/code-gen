@@ -1,11 +1,10 @@
-package com.easy.jcode;
+package com.github.dactiv.code.gen;
 
-import com.easy.jcode.execute.TableHandler;
-import com.easy.jcode.execute.TemplateHandler;
-import com.easy.jcode.model.Table;
+import com.github.dactiv.code.gen.execute.TableHandler;
+import com.github.dactiv.code.gen.execute.TemplateHandler;
+import com.github.dactiv.code.gen.model.Table;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +31,8 @@ public class JavaCodeRunner implements CommandLineRunner {
 
         String currnetDic = Thread.currentThread().getContextClassLoader().getResource(".").getPath();
         StringBuilder targetDic = new StringBuilder();
-        targetDic.append(currnetDic.substring(0, currnetDic.indexOf("easy-jcode")));
-        targetDic.append("easy-jcode");
+        targetDic.append(currnetDic.substring(0, currnetDic.indexOf("code-gen")));
+        targetDic.append("code-gen");
         targetDic.append(File.separator).append("output");
 
         //删除输出文件夹

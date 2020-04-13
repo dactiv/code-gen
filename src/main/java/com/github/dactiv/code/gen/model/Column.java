@@ -1,4 +1,4 @@
-package com.easy.jcode.model;
+package com.github.dactiv.code.gen.model;
 
 public class Column {
 
