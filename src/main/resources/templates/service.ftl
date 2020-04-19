@@ -34,7 +34,7 @@ public class ${table.entityName}Service {
      * @param ${table.entityVarName} ${table.tableComment}实体
      */
     public void save${table.entityName}(${table.entityName} ${table.entityVarName}) {
-        if (Objects.nonNull(${table.entityVarName}.getId())) {
+        if (Objects.isNull(${table.entityVarName}.getId())) {
             insert${table.entityName}(${table.entityVarName});
         } else {
             update${table.entityName}(${table.entityVarName});
