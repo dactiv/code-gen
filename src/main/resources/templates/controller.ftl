@@ -121,7 +121,7 @@ public class ${table.entityName}Controller {
     public boolean is${column.javaName}Unique(@RequestParam ${column.javaTypeName} ${column.javaVarName}) {
         Map<String, Object> filter = new LinkedHashMap<>();
         filter.put("${column.javaVarName}Eq", ${column.javaVarName});
-        return dictionaryService.findDataDictionaries(filter).size() > 0;
+        return ${table.entityVarName}Service.find${table.entityName}List(filter).isEmpty();
     }
     </#if>
 </#list>
