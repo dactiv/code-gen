@@ -11,7 +11,7 @@
             <trim suffixOverrides="AND">
             <#list table.columns as column>
                 <#if column.unique>
-                <if test="${column.javaVarName}Eq != null and ${column.javaVarName}Eq != ''">
+                <if test="${column.javaVarName}Eq != null and !''.equals(${column.javaVarName})">
                     AND ${column.columnName} = ${r'#{'}${column.javaVarName}Eq}
                 </if>
                 </#if>
